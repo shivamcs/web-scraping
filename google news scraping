@@ -1,0 +1,20 @@
+import requests
+import time
+
+def pynewsus():
+    main_url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=b92bb8443ed247a3accb39d246d3c681"
+    open_google_page = requests.get(main_url).json()
+    articles = open_google_page["articles"]
+
+    result = []
+
+    for a in articles:
+        result.append(a["title"])
+
+    for i in range(10):
+        time.sleep(5)
+        Headline = i+1, result[i]
+        print(Headline)
+
+pynewsus()
+@shivamcs
